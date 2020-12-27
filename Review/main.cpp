@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <iterator>
 #include "binarySearch.hpp"
 
 // Forward Declarations
@@ -16,10 +17,10 @@ int getInteger();
 int main(int argc, const char * argv[]) {
     // insert code here...
     int number{ getInteger() };
-    int array[]{ 1, 2, 5, 8, 9, 12, 15, 16, 17, 38, 40, 45, 54, 55, 60};
+    int carray[]{ 1, 2, 5, 8, 9, 12, 15, 16, 17, 38, 40, 45, 54, 55, 60};
     
     printFactors(number);
-    std::cout << "index of " << number << " is: " << binarySearch(array, 15, number) << '\n';
+    std::cout << "index of " << number << " is: " << binarySearch(carray, 15, number) << '\n';
     return 0;
 }
 
