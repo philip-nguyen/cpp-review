@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include "input.h"
 
 int getInteger()
 {
@@ -15,4 +16,13 @@ int getInteger()
     int x{};
     std::cin >> x;
     return x;
+}
+
+void printFactors(int num) {
+    int x{1};
+    while(x <= num) {
+        if(num % x == 0)
+            std::cout << x << std::endl;
+        x++;
+    }
 }

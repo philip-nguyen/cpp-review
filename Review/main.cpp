@@ -9,26 +9,24 @@
 #include <iostream>
 #include <iterator>
 #include "binarySearch.hpp"
-
-// Forward Declarations
-void printFactors(int);
-int getInteger();
+#include "linkedlist.hpp"
+#include "input.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int number{ getInteger() };
-    int carray[]{ 1, 2, 5, 8, 9, 12, 15, 16, 17, 38, 40, 45, 54, 55, 60};
+    Node* n = nullptr;
+    Node* one = new Node("Nicole", 15);
+    Node* two = new Node("EJ", 13);
     
-    printFactors(number);
-    std::cout << "index of " << number << " is: " << binarySearch(carray, 15, number) << '\n';
+    n = new Node("Philip", 14);
+    n->appendToTail(n, one);
+    n->appendToTail(n, two);
+    
+    std::cout << printList1(n);
+    
     return 0;
 }
 
-void printFactors(int num) {
-    int x{1};
-    while(x <= num) {
-        if(num % x == 0)
-            std::cout << x << std::endl;
-        x++;
-    }
-}
+
+
+
