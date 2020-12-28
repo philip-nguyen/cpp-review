@@ -1,0 +1,17 @@
+Shopping List
+apple   1.05
+banana    0.50
+book   139.95
+eraser   0.509
+flashdrive 9.99
+folder     1.00
+highlighter 0.98
+keyboard  20.15
+laptop  559.99
+mouse  17.95
+mousepad 6.69
+notebook  6.00
+paper     2.50
+pencil  0.35
+pen     3.19
+water  1.00

@@ -8,8 +8,9 @@
 
 #include <iostream>
 #include <iterator>
-#include "binarySearch.hpp"
-#include "linkedlist.hpp"
+#include "ctci/binarySearch.hpp"
+#include "ctci/linkedlist.hpp"
+#include "cis22b/Assignment1-shopping_list/assignment1.hpp"
 #include "input.h"
 
 int main(int argc, const char * argv[]) {
@@ -22,7 +23,9 @@ int main(int argc, const char * argv[]) {
     n->appendToTail(n, one);
     n->appendToTail(n, two);
     
-    std::cout << printList1(n);
+    std::cout << printList1(n) << "\n\n";
+    std::cout << "Assignment 1...\n";
+    fileOutput();
     
     return 0;
 }
