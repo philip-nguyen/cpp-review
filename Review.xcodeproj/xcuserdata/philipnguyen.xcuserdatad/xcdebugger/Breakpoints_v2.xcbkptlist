@@ -46,8 +46,8 @@
             filePath = "Review/cis22b/Assignment7-skunk/skunk.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "Dice::roll()"
             landmarkType = "7">
          </BreakpointContent>

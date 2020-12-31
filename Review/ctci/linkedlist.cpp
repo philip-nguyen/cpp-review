@@ -8,6 +8,7 @@
 
 #include "linkedlist.hpp"
 #include <string>
+#include <iostream>
 
 
 /** To test in main:
@@ -42,10 +43,20 @@ void Node::appendToTail(Node* head, Node* n) {
 std::string printList1(Node* n) {
     std::string s{};
     while(n != nullptr) {
-       s += "Name: " + n->getName() + "\tID: " + std::to_string(n->getId()) + "\n";
+       s += "ID: " + std::to_string(n->getId()) + "\tName: " + n->getName() +"\n";
         n = n->next;
     }
     return s;
+}
+
+void deleteMiddleNode(Node* n) {
+    if(n->next == nullptr)
+        std::cout << "ERROR: This is the end node\n";
+    // overwrite the next node's info to current node
+    n->setId(n->next->getId());
+    n->setName(n->next->getName());
+    // omit next node
+    n->next = n->next->next;
 }
 
 /**

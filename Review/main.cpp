@@ -17,32 +17,22 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
+    Node* n = nullptr;
+    Node* one = new Node("Nicole", 15);
+    Node* two = new Node("EJ", 13);
+    Node* thr = new Node("Steven", 23);
+    Node* f4r = new Node("Toto", 30);
     
-    // Assignment 1
-    // std::cout << "Assignment 1...\n";
-    // fileOutput();
+    n = new Node("Philip", 14);
+    n->appendToTail(n, one);
+    n->appendToTail(n, two);
+    n->appendToTail(n, thr);
+    n->appendToTail(n, f4r);
     
-    
-    // Assignment 7
-    std::cout << "Assignment 7...\n";
-    Player curly("Curly",1);
-    Player larry("larry",2);
-    Player moe("Moe",4);
-
-    Dice dice;
-
-    bool gameOver = false;
-
-    while (!gameOver)
-    {
-        if      (curly.takeTurn(dice) >= 100) gameOver = curly.declareWinner();
-        else if (larry.takeTurn(dice) >= 100) gameOver = larry.declareWinner();
-        else if (moe.takeTurn(dice) >= 100)   gameOver = moe.declareWinner();
-        else { std::cout << "----------------------------------------------\n";}
-    }
-
-    std::cout << "That's all folks!!!" << std::endl;
-    
+    std::cout << printList1(n);
+    std::cout << "Deleting a Node...\n";
+    deleteMiddleNode(thr);
+    std::cout << printList1(n);
     return 0;
 }
 

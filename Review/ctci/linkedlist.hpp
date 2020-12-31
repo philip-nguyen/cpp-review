@@ -24,9 +24,13 @@ public:
     
     std::string getName() { return name; }
     int getId() { return id; }
+    
+    void setName(std::string n){ name = n; }
+    void setId(int i){ id = i; }
 };
 
 std::string printList1(Node*);
+void deleteMiddleNode(Node*);
 
 /*
 // LinkedList Class
