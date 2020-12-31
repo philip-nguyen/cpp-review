@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <random>
+#include <stdlib.h>     // srand, rand
 #include <time.h>       // for time function for different seed
 #include <unistd.h>     // usleep
 
@@ -23,12 +24,14 @@ Dice::Dice(){}
  */
 int Dice::roll() {
     // initialize random seed
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> distribution(1,6);
-    
+    //std::default_random_engine generator;
+    std::random_device rand_dev;
+    std::mt19937 generator(rand_dev());
+    std::uniform_int_distribution<int> diceDistribution(1,6);
+    // srand(time(NULL));
     // Roll the dice
-    die1 = distribution(generator);
-    die2 = distribution(generator);
+    die1 = diceDistribution(generator);
+    die2 = diceDistribution(generator);
     
     
     if(die1 == 1 && die2 == 1) {
@@ -83,6 +86,7 @@ int Player::takeTurn(Dice d) {
         else { // -1 return for SKUNK
             rollNum = rollsPerTurn;
             turnSum = 0;
+            points = 0; // punishment
         }
     }
     points += turnSum;
@@ -92,6 +96,7 @@ int Player::takeTurn(Dice d) {
 
 // Declare the winner and return true for gameOver
 bool Player::declareWinner() {
+    std::cout << name << " is the winner!!!\n";
     return true;
 }
 
