@@ -59,6 +59,12 @@ void deleteMiddleNode(Node* n) {
     n->next = n->next->next;
 }
 
+Node* returnKthtoLastNode(Node* n, int k, int index) {
+    if(n->next == nullptr)
+        std::cout << "HELLO IT'S NULL\n";
+    return n;
+}
+
 /**
 // LinkedList Class
 LinkedList::LinkedList(Node n) {

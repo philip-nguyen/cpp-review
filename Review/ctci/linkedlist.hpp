@@ -31,6 +31,7 @@ public:
 
 std::string printList1(Node*);
 void deleteMiddleNode(Node*);
+Node* returnKthtoLastNode(Node*, int, int);
 
 /*
 // LinkedList Class
