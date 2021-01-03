@@ -59,10 +59,55 @@ void deleteMiddleNode(Node* n) {
     n->next = n->next->next;
 }
 
-Node* returnKthtoLastNode(Node* n, int k, int index) {
-    if(n->next == nullptr)
-        std::cout << "HELLO IT'S NULL\n";
-    return n;
+void printKthtoLastNode(Node* curr, int k, int& index) {
+    if(curr != nullptr) {
+        printKthtoLastNode(curr->next, k, index);
+        index++;
+        if(index == k)
+            std::cout << curr->getName() << std::endl;
+    }
+}
+
+// for all node with id < x put in left partition
+// otherwise put in right partition
+void partition(Node* curr, int x) {
+    Node* leftPartitionHead = nullptr;
+    Node* leftPartitionTail = nullptr;
+    Node* rightPartitionHead = nullptr;
+    Node* rightPartitionTail = nullptr;
+    
+    while(curr != nullptr) {
+        // if curr->getId < x add to left partition
+        //Node* next = curr->next;
+        //curr->next = nullptr;
+        if(curr->getId() < x) {
+            if(leftPartitionHead == nullptr) {
+                leftPartitionHead = curr;
+                leftPartitionTail = leftPartitionHead;
+            }
+            else {
+                leftPartitionTail->next = curr;
+                leftPartitionTail = leftPartitionTail->next;
+            }
+        }
+        // otherwise add to right partition
+        else {
+            if(rightPartitionHead == nullptr) {
+                rightPartitionHead = curr;
+                rightPartitionTail = rightPartitionHead;
+            }
+            else {
+                rightPartitionTail->next = curr;
+                rightPartitionTail = rightPartitionTail->next;
+            }
+            
+        }
+        curr = curr->next;
+    }
+    
+    leftPartitionTail->next = rightPartitionHead;
+    
+    std::cout << printList1(leftPartitionHead) << std::endl;
 }
 
 /**

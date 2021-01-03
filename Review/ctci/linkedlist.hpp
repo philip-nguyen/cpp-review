@@ -30,8 +30,12 @@ public:
 };
 
 std::string printList1(Node*);
+// Problem 2.2
+void printKthtoLastNode(Node*, int, int&);
+// Problem 2.3
 void deleteMiddleNode(Node*);
-Node* returnKthtoLastNode(Node*, int, int);
+// Problem 2.4
+void partition(Node*, int);
 
 /*
 // LinkedList Class
