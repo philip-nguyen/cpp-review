@@ -20,7 +20,7 @@ public:
     Node* next;
 
     Node(std::string n, int d);
-    void appendToTail(Node* head, Node* n);
+    void appendToTail(Node* n);
     
     std::string getName() { return name; }
     int getId() { return id; }
@@ -38,6 +38,9 @@ void deleteMiddleNode(Node*);
 void partition(Node*, int);
 // Problem 2.5.1
 void sumList(Node*, Node*);
+// Problem 2.7
+void findIntersection(Node*, Node*);
+
 
 /*
 // LinkedList Class
