@@ -42,6 +42,24 @@ int main(int argc, const char * argv[]) {
     
     partition(n, 17);
     
+    Node *n11 = new Node("", 7);
+    Node *n12 = new Node("", 1);
+    Node *n13 = new Node("", 6);
+    
+    Node *n21 = new Node("", 5);
+    Node *n22 = new Node("", 9);
+    Node *n23 = new Node("", 2);
+    Node *n24 = new Node("", 1);
+    
+    n->appendToTail(n11, n12);
+    n->appendToTail(n11, n13);
+    
+    n->appendToTail(n21, n22);
+    n->appendToTail(n21, n23);
+    n->appendToTail(n21, n24);
+    
+    sumList(n11, n21);
+    
     //std::cout << "Deleting a Node...\n";
     //deleteMiddleNode(thr);
     //std::cout << printList1(n);

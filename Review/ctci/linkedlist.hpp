@@ -36,6 +36,8 @@ void printKthtoLastNode(Node*, int, int&);
 void deleteMiddleNode(Node*);
 // Problem 2.4
 void partition(Node*, int);
+// Problem 2.5.1
+void sumList(Node*, Node*);
 
 /*
 // LinkedList Class

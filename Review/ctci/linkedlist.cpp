@@ -9,7 +9,7 @@
 #include "linkedlist.hpp"
 #include <string>
 #include <iostream>
-
+#include <math.h>
 
 /** To test in main:
  Node* n = nullptr;
@@ -110,29 +110,37 @@ void partition(Node* curr, int x) {
     std::cout << printList1(leftPartitionHead) << std::endl;
 }
 
-/**
-// LinkedList Class
-LinkedList::LinkedList(Node n) {
-    head = n;
-}
-
-void LinkedList::addNode(Node n) {
-    Node temp{this->head};
-    while(temp.next != nullptr) {
-        temp = temp.next;
-    }
-    temp->next = n;
-}
-
-std::string LinkedList::printList() {
-    std::string s{};
-    Node temp{this->head};
-    while(temp != nullptr) {
-        s += "Name: " + temp->getName() + "\tID: " + std::to_string(temp->getId()) + "\n";
-        temp = temp->next;
+void sumList(Node* n1, Node* n2) {
+    int sum{0}, num1, num2;
+    int place{0};
+    
+    while(n1 != nullptr || n2 != nullptr) {
+        if(n1 != nullptr) {
+            // get the number
+            num1 = n1->getId();
+            // traverse
+            if (n1->next != nullptr) n1 = n1->next;
+            else n1 = nullptr;
+        }
+        else num1 = 0;
+        
+        if(n2 != nullptr) {
+            num2 = n2->getId();
+            if (n2->next != nullptr) n2 = n2->next;
+            else n2 = nullptr;
+        }
+        else num2 = 0;
+        
+        sum += (num1 + num2) * pow(10, place);
+        // increment to the next digit place
+        place++;
+        
+        
     }
     
-    return s;
+    std::cout << "Sum: " << sum << std::endl;
 }
 
-*/
+/** Sum list test
+ 
+ */
