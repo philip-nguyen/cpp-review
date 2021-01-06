@@ -13,8 +13,6 @@
 StackNode* Stack::pop() {
     StackNode* temp = top;
     top = top->next;
-    if (top->data == min->data)
-        min = min->next;
     return temp;
 }
 
@@ -22,17 +20,17 @@ void Stack::push(StackNode* item) {
     if(top == nullptr) {
         top = item;
         
-        min = new StackNode(item->data);
+        top->min = item;
     }
     else {
         item->next = top;
         top = item;
-        if (min->data > item->data) {
+        if (top->min->data > item->data) {
             // make next min the old min
-            min->next = new StackNode(min->data);
-            // the min now points to item
-            min->data = item->data;
+            top->min = item;
         }
+        // set min to the already established min
+        else top->min = top->next->min;
     }
     
 }
@@ -49,7 +47,7 @@ bool Stack::isEmpty() {
 }
 
 StackNode* Stack::getMin() {
-    return min;
+    return peek()->min;
 }
 
 /******************/

@@ -16,6 +16,7 @@ class StackNode {
 public:
     StackNode* next;
     int data;
+    StackNode* min;
     
     StackNode(int);
 };
@@ -24,7 +25,6 @@ public:
 class Stack {
 public:
     StackNode* top;
-    StackNode* min;
     
     Stack(StackNode* n) { top = n; }
     
