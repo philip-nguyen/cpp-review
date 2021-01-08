@@ -140,6 +140,35 @@ void sumList(Node* n1, Node* n2) {
     
     std::cout << "Sum: " << sum << std::endl;
 }
+// Example code
+/**
+ Node* n = new Node("Philip", 1);
+ Node* one = new Node("Nicole", 25);
+ Node* two = new Node("EJ", 33);
+ Node* thr = new Node("Steven", 3);
+ Node* f4r = new Node("Toto", 5);
+ Node* five = new Node("Apple", 17);
+ Node* six = new Node("Intel", 8);
+ Node* seven = new Node("Accuray", 20);
+ 
+ n->appendToTail(one);
+ n->appendToTail(two);
+ n->appendToTail(thr);
+ n->appendToTail(f4r);
+ n->appendToTail(five);
+ n->appendToTail(six);
+ n->appendToTail(seven);
+ 
+ std::cout << printList1(n);
+ 
+ // needs a reference to this
+ int x{0};
+ printKthtoLastNode(n, 4, x);
+ 
+ partition(n, 17);
+ */
+
+
 // Sum List Example
 /** Sum list test
 Node *n11 = new Node("", 7);

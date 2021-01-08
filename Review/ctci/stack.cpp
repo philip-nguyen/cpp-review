@@ -13,6 +13,7 @@
 StackNode* Stack::pop() {
     StackNode* temp = top;
     top = top->next;
+    size--;
     return temp;
 }
 
@@ -32,6 +33,7 @@ void Stack::push(StackNode* item) {
         // set min to the already established min
         else top->min = top->next->min;
     }
+    size++;
     
 }
 
@@ -48,6 +50,23 @@ bool Stack::isEmpty() {
 
 StackNode* Stack::getMin() {
     return peek()->min;
+}
+
+
+/******************/
+// SetOfStacks Functions
+/******************/
+void SetOfStacks::push(StackNode* n) {
+    // if the set is empty OR current stack is maxed...
+    if(set.empty() || set.back()->size == 10) {
+        // start a new stack
+        Stack* s = new Stack(n);
+        set.push_back(s);
+    }
+    else {
+        // add node to the most current stack
+        set.back()->push(n);
+    }
 }
 
 /******************/

@@ -10,6 +10,7 @@
 #define stack_hpp
 
 #include <stdio.h>
+#include <vector>
 
 // Node
 class StackNode {
@@ -25,8 +26,12 @@ public:
 class Stack {
 public:
     StackNode* top;
+    int size;
     
-    Stack(StackNode* n) { top = n; }
+    Stack(StackNode* n) {
+        top = n;
+        size = 1;
+    }
     
     StackNode* pop();
     void push(StackNode*);
@@ -34,6 +39,16 @@ public:
     bool isEmpty();
     
     StackNode* getMin();
+};
+
+class SetOfStacks {
+public:
+    std::vector<Stack*> set;
+    
+    StackNode* pop();
+    void push(StackNode*);
+    StackNode* peek();
+    bool isEmpty();
 };
 
 class Queue {

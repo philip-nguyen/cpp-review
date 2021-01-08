@@ -14,34 +14,16 @@
 #include "cis22b/Assignment1-shopping_list/assignment1.hpp"
 #include "cis22b/Assignment7-skunk/skunk.hpp"
 #include "input.h"
+#include "PokemonStatCalculator.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    Node* n = new Node("Philip", 1);
-    Node* one = new Node("Nicole", 25);
-    Node* two = new Node("EJ", 33);
-    Node* thr = new Node("Steven", 3);
-    Node* f4r = new Node("Toto", 5);
-    Node* five = new Node("Apple", 17);
-    Node* six = new Node("Intel", 8);
-    Node* seven = new Node("Accuray", 20);
-    
-    n->appendToTail(one);
-    n->appendToTail(two);
-    n->appendToTail(thr);
-    n->appendToTail(f4r);
-    n->appendToTail(five);
-    n->appendToTail(six);
-    n->appendToTail(seven);
-    
-    std::cout << printList1(n);
-    
-    // needs a reference to this
-    int x{0};
-    printKthtoLastNode(n, 4, x);
-    
-    partition(n, 17);
-      
+    bool catchPokemon = false;
+    int times{0};
+    while(!catchPokemon && times < 55) {
+        catchPokemon = catchAttempt(155, 3, 3, 3.5f, 2);
+        times++;
+    }
     //std::cout << "Deleting a Node...\n";
     //deleteMiddleNode(thr);
     //std::cout << printList1(n);
