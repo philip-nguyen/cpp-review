@@ -8,8 +8,10 @@
 
 #ifndef input_h
 #define input_h
+#include <string>
 
 void printFactors(int);
 int getInteger();
+int lengthLongestPath(std::string input);
 
 #endif /* input_h */

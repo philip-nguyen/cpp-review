@@ -61,12 +61,19 @@ void SetOfStacks::push(StackNode* n) {
     if(set.empty() || set.back()->size == 10) {
         // start a new stack
         Stack* s = new Stack(n);
+        // add the stack to the set of stacks
         set.push_back(s);
     }
     else {
         // add node to the most current stack
         set.back()->push(n);
     }
+}
+
+StackNode* SetOfStacks::pop() {
+    // if the current stack is not empty
+    // pop from the current stack
+    // otherwise
 }
 
 /******************/
