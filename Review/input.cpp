@@ -59,3 +59,38 @@ int lengthLongestPath(std::string input) {
     return maxLength;
 
 }
+
+// condition: CANNOT directly convert to integers
+std::string addStrings(std::string num1, std::string num2) {
+    
+    std::string sum = "";
+    int carry{0};
+    
+    // check for bounds
+    if(num1.length() < 5100 && num2.length() < 5100) {
+        int longer = num1.length() >= num2.length() ? num1.length() : num2.length();
+        int len1 = num1.length();
+        int len2 = num2.length();
+        for (int i = 1; i <= longer; i++) {
+            // iterate through the string of numbers BACKWARDS
+            // check if the length - index is within the string's bounds
+            // convert each character to int
+            // substract ascii value of '0' to get int value
+            int a = (len1 - i >= 0) ? ((int)(num1[len1 - i] - '0')) : 0;
+            int b = (len2 - i >= 0) ? ((int)(num2[len2 - i] - '0')) : 0;
+            // summate and concatenate to a string
+            if(a + b + carry >= 10) {
+                sum = std::to_string(a + b + carry - 10) + sum;
+                carry = 1;
+            }
+            else {
+                sum = std::to_string(a + b + carry) + sum;
+                carry = 0;
+            }
+            
+        }
+        
+    }
+    
+    return (carry) ? "1" + sum : sum;
+}
