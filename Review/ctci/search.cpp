@@ -6,7 +6,7 @@
 //  Copyright © 2020 Philip Nguyen. All rights reserved.
 //
 
-#include "binarySearch.hpp"
+#include "search.hpp"
 
 // Parameters are array pointer, array SIZE and key
 int binarySearch(int arr[], int arraySize, int key) {

@@ -74,13 +74,58 @@ StackNode* SetOfStacks::pop() {
     // if the current stack is not empty
     // pop from the current stack
     // otherwise
+    if(set.empty() || set.back()->isEmpty())
+       return nullptr;
+    else {
+        set.back()->size--;
+        // if the set is popped back
+        if(set.back()->size <= 0) set.pop_back();
+        return set.back()->pop();
+    }
+}
+
+StackNode* SetOfStacks::peek() {
+    if(set.empty() && set.back()->isEmpty()) {
+        return nullptr;
+    }
+    else
+        return set.back()->pop();
 }
 
 /******************/
 // Queue Functions
 /******************/
 void Queue::add(StackNode* item) {
-    
+    if (item != nullptr) {
+        last->next = item;
+        last = last->next;
+    }
+    else { // it's an empty queue
+        first = item;
+        last = item;
+    }
+}
+
+StackNode* Queue::remove() {
+    if(first != nullptr) {
+        StackNode* ret = first;
+        first = first->next;
+        return ret;
+    }
+    else return nullptr;
+}
+
+StackNode* Queue::peek() {
+    if(first != nullptr) {
+        return first;
+    }
+    else return nullptr;
+}
+
+bool Queue::isEmpty() {
+    if(first != nullptr)
+        return false;
+    else return true;
 }
 
 // Stack and Queue Exercises
