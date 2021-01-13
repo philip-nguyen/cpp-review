@@ -7,5 +7,16 @@
 //
 
 #include "sort.hpp"
+#include <vector>
 
+template <class T>
+void mergeSort(std::vector<T> arr) {
+    // size of the current arr
+    std::vector<T> tempArr(arr.size());
+    mergeSort(arr, tempArr, 0, arr.size - 1);
+}
 
+template <class T>
+void mergeSort(std::vector<T> a, std::vector<T> b, int left, int right) {
+    
+}

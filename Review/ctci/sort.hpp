@@ -10,12 +10,13 @@
 #define sort_hpp
 
 #include <stdio.h>
+#include <vector>
 
 template <class T>
-void mergeSort(T[]);
+void mergeSort(std::vector<T>);
 
 template <class T>
-void mergeSort(T[], T[], int left, int right);
+void mergeSort(std::vector<T>, std::vector<T>, int left, int right);
 
 
 #endif /* sort_hpp */
