@@ -18,5 +18,7 @@ void mergeSort(std::vector<T>);
 template <class T>
 void mergeSort(std::vector<T>, std::vector<T>, int left, int right);
 
+template <class T>
+void merge(std::vector<T>, std::vector<T>, int, int, int);
 
 #endif /* sort_hpp */
