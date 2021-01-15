@@ -11,6 +11,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <unordered_map>
 #include "input.h"
 
 int getInteger()
@@ -93,4 +94,33 @@ std::string addStrings(std::string num1, std::string num2) {
     }
     
     return (carry) ? "1" + sum : sum;
+}
+
+/**
+ Two Sum
+ */
+std::vector<int> twoSum(std::vector<int> & nums, int target) {
+    // map is used to keep a set of factors
+    std::unordered_map<int, int> mySet;
+    // return a vector with the appropriate indexes
+    std::vector<int> ret;
+    
+    for(int i = 0; i < nums.size(); i++) {
+        int numberToFind = target - nums[i];
+        
+        // if the set has the other number
+        if(mySet.find(numberToFind) != mySet.end()) {
+            // push value from key = numberToFind
+            ret.push_back(mySet[numberToFind]);
+            // push the other current index value
+            ret.push_back(i);
+            return ret;
+        }
+        // add it to the set
+        // where key = num 1
+        // value = index #
+        mySet[nums[i]] = i;
+    }
+    
+    return ret;
 }

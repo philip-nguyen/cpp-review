@@ -9,9 +9,11 @@
 #ifndef input_h
 #define input_h
 #include <string>
+#include <vector>
 
 void printFactors(int);
 int getInteger();
 int lengthLongestPath(std::string input);
+std::vector<int> twoSum(std::vector<int>&, int);
 
 #endif /* input_h */
