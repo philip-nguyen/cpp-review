@@ -212,3 +212,28 @@ void findIntersection(Node* n1, Node* n2) {
  n2->appendToTail(n3);
  findIntersection(n1, n2);
  */
+
+Node* mergeTwoLists(Node* l1, Node* l2) {
+    Node temp;
+    // create pointer to dummy node
+    Node* tail = &temp;
+    
+    // string all the pearls
+    while(l1 && l2) {
+        // if l1 is lesser, then make l2 = l1->next
+        if(l1->getName() <= l2->getName()) {
+            tail->next = l1;
+            l1 = l1->next;
+            
+        }
+        else {
+            tail->next = l2;
+            l2 = l2->next;
+        }
+        tail = tail->next;
+    }
+    
+    // point to the rest of the greater numbers in what remains
+    tail->next = l1 ? l1 : l2;
+    return temp.next;
+}

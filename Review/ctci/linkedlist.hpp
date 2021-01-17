@@ -19,6 +19,7 @@ class Node {
 public:
     Node* next;
 
+    Node();
     Node(std::string n, int d);
     void appendToTail(Node* n);
     
@@ -41,6 +42,7 @@ void sumList(Node*, Node*);
 // Problem 2.7
 void findIntersection(Node*, Node*);
 
+Node* mergeTwoLists(Node*, Node*);
 
 /*
 // LinkedList Class
