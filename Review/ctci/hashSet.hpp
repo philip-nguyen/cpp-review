@@ -14,5 +14,7 @@
 
 // find the single number in a collection of duplicates
 int singleNumber(std::vector<int>&);
+// this one checks for single num in a collection of triplets
+int singleNumber2(std::vector<int>&);
 
 #endif /* hashSet_hpp */
