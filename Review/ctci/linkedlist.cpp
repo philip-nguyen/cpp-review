@@ -237,3 +237,17 @@ Node* mergeTwoLists(Node* l1, Node* l2) {
     tail->next = l1 ? l1 : l2;
     return temp.next;
 }
+
+// Delete duplicates from a list that is sorted
+Node* deleteDuplicates(Node* head) {
+    Node* cur = head;
+    // while current is not null
+    while(cur != nullptr) {
+        // while current.next is not null AND is not equal
+        // remove the duplicate node
+        while(cur->next != nullptr && cur->getId() == cur->next->getId()) cur->next = cur->next->next;
+        // otherwise, just traverse
+        cur = cur->next;
+    }
+    return head;
+}

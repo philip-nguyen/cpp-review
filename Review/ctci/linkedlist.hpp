@@ -43,7 +43,7 @@ void sumList(Node*, Node*);
 void findIntersection(Node*, Node*);
 
 Node* mergeTwoLists(Node*, Node*);
-
+Node* deleteDuplicates(Node*);
 /*
 // LinkedList Class
 class LinkedList {
