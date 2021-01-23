@@ -127,3 +127,29 @@ std::vector<int> twoSum(std::vector<int> & nums, int target) {
     
     return ret;
 }
+
+/**
+ Given two strings s and t, return true if they are both one edit distance apart, otherwise return false.
+ 
+ It can be 1 insert/delete or 1 replace
+ */
+bool oneEditDistance(std::string s, std::string t) {
+    int m = s.size(), n = t.size();
+    if (m > n) {
+        // run the function again with the shorter term in param s
+        return oneEditDistance(t, s);
+    }
+    for (int i = 0; i < m; i++) {
+        // if the characters are not equal
+        if (s[i] != t[i]) {
+            // if the lengths are equal, check if the rest is equal
+            if (m == n) {
+                return s.substr(i + 1) == t.substr(i + 1);
+            }
+            // check if the rest of the substrings are equal
+            return s.substr(i) == t.substr(i + 1);
+        }
+    }
+    // on the special case that the character is at the end
+    return m + 1 == n;
+}

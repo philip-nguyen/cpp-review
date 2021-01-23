@@ -15,5 +15,6 @@ void printFactors(int);
 int getInteger();
 int lengthLongestPath(std::string input);
 std::vector<int> twoSum(std::vector<int>&, int);
+bool oneEditDistance(string, string);
 
 #endif /* input_h */
