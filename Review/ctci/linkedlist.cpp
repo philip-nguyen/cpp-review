@@ -30,6 +30,10 @@ Node::Node(std::string n, int d) {
     this->next = nullptr;
 }
 
+Node::Node() {
+    this->next = nullptr;
+}
+
 void Node::appendToTail(Node* n) {
     
     Node* l = this;

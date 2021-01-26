@@ -11,10 +11,11 @@
 #include <string>
 #include <vector>
 
+void swap(int&, int&);
 void printFactors(int);
 int getInteger();
 int lengthLongestPath(std::string input);
 std::vector<int> twoSum(std::vector<int>&, int);
-bool oneEditDistance(string, string);
+bool oneEditDistance(std::string, std::string);
 
 #endif /* input_h */

@@ -153,3 +153,12 @@ bool oneEditDistance(std::string s, std::string t) {
     // on the special case that the character is at the end
     return m + 1 == n;
 }
+
+/**
+ Swap two numbers without using any temp variable
+ */
+void swap(int &a, int &b) {
+    a = a + b;
+    b = a - b; // (a + b) - b = a
+    a = a - b; // (a + b) - (a) = b
+}
